@@ -1,6 +1,10 @@
+import 'dotenv/config';
 import express from 'express';
+import routePets from './routes/pets.js';
 
 const app = express();
+
+app.use('/pets', routePets);
 
 try {
     const PORT = process.env.PORT || 3000;
