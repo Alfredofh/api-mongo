@@ -1,3 +1,6 @@
+import petModel from '../models/petsModel.js';
+
+
 class petsController {
     constructor() {
 
@@ -5,7 +8,8 @@ class petsController {
 
     async create(req, res) {
         try {
-            res.status(201).json({ status: 'Create-ok' });
+            const data = petModel.create(req.body);
+            res.status(201).json(data);
         } catch (e) {
             res.status(500).send(e);
         }

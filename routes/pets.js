@@ -1,6 +1,6 @@
 import express from 'express';
 const route = express.Router();
-import petsController from '../controllers/pets.js';
+import petsController from '../controllers/petsController.js';
 
 route.post('/', petsController.create);
 route.get('/', petsController.getAll);
