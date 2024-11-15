@@ -8,7 +8,7 @@ class petsController {
 
     async create(req, res) {
         try {
-            const data = petModel.create(req.body);
+            const data = await petModel.create(req.body);
             res.status(201).json(data);
         } catch (e) {
             res.status(500).send(e);
