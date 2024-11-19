@@ -35,7 +35,7 @@ class petsController {
     async getAll(req, res) {
         try {
             const data = await petModel.getAll();
-            res.status(201).json({ data });
+            res.status(201).json(data);
         } catch (e) {
             res.status(500).send(e);
         }

@@ -6,7 +6,7 @@ class dbClient {
         this.connect();
     }
     async connect() {
-        const queryString = `mongodb+srv://${process.env.USER_DB}:${process.env.PASS_DB}@${process.env.SERVER_DB}/?retryWrites=true&w=majority&appName=adoptions`
+        const queryString = `mongodb+srv://${process.env.USER_DB}:${process.env.PASS_DB}@${process.env.SERVER_DB}/adoption?retryWrites=true&w=majority`
         await mongoose.connect(queryString)
         this.connect();
     }
