@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import Pet from '../schema/petSchema.js';
 
 class petModel {
@@ -5,10 +6,10 @@ class petModel {
         return await Pet.create(pet);
     }
     async update(id, pet) {
-        return await Pet.findByIdAndUpdate(id, pet, { new: true });
+        return await Pet.findOneAndUpdate({ _id: new mongoose.Types.ObjectId(id) });
     }
     async delete(id) {
-        return await Pet.findByIdAndDelete(id);
+        return await Pet.findOneAndDelete({ _id: new mongoose.Types.ObjectId(id) });
     }
     async getAll() {
         return await Pet.find();

@@ -7,16 +7,19 @@ const petSchema = new mongoose.Schema({
     },
     species: {
         type: String,
-        required: true
+        required: true,
+        enum: ["dog", "cat", "bird", "fish", "reptile"],
     },
     race: {
         type: String,
     },
     age: {
-        type: Number
+        type: Number,
+        min: [0, "age cannot be negative"]
     },
     adopted: {
         type: Boolean,
+        default: false,
     },
     description: {
         type: String
